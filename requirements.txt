@@ -1,0 +1,5 @@
+transformers>=4.30.2
+torch>=2.0
+gradio>=3.39.0
+accelerate>=0.21.0
+cpm_kernels>=1.0.11
