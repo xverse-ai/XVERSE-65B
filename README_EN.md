@@ -17,6 +17,10 @@
     <p>
 </h4>
 
+## Update Information
+**[2023/11/24]** Update the related information of the pre-training data.  
+**[2023/11/06]** Released the XVERSE-65B base model.  
+
 ## Model Introduction
 
 **XVERSE-65B** is a multilingual large language model, independently developed by Shenzhen Yuanxiang Technology. The models released this time is the base model **XVERSE-65B**. Its key features are as follows:
@@ -25,6 +29,32 @@
 - **Training Data**: The model has been thoroughly trained on a diversified and high-quality dataset consisting of 2.6 trillion of tokens, including more than 40 languages such as Chinese, English, Russian, and Spanish. The sampling ratio of different types of data is finely set, which makes the performance of Chinese and English excellent, and also takes into account the effect of other languages.
 - **Tokenization**: Based on the BPE (Byte-Pair Encoding) algorithm, a tokenizer with a vocabulary size of 100,534 has been trained using hundreds of gigabytes of language data. This tokenizer is capable of supporting multilingual without the need for additional vocabulary expansion.
 - **Training Framework**: The training utilizes FlashAttention2 for accelerated computation, and on top of 3D parallelism, virtual pipeline technology is applied to reduce the excessive bubble rate caused by longer pipelines and 16k context windows. This achieves a peak computational efficiency within the industry-leading range in the petaflop-scale cluster. Concurrently, through continuous optimization of cluster infrastructure operations, resource scheduling, training frameworks, and the scheduling platform, a highly stable, low-interruption, and robust fault-tolerant training system has been developed, enhancing the effective weekly training rate to 98.6%.
+
+During the pre-training phase, **XVERSE-65B** primarily utilized 7 different types of data. The following table shows a comparison of the pre-training datasets of XVERSE-65B with some other well-known models:
+
+| Data Type       | GPT3[^1] | Llama[^2] | BLOOM[^3] | PaLM[^4] | Chinchilla[^5] | Gopher[^6] | MT-NLG[^7] | XVERSE-65B |
+|:---------------:|:--------:|:---------:|:---------:|:--------:|:--------------:|:----------:|:----------:|:----------:|
+| Web Pages       | Y        | Y         | Y         | Y        | Y              | Y          | Y          | Y          |
+| Code            |          | Y         | Y         | Y        | Y              | Y          | Y          | Y          |
+| Encyclopedia    | Y        | Y         |           | Y        | Y              | Y          | Y          | Y          |
+| Books           | Y        | Y         |           | Y        | Y              | Y          | Y          | Y          |
+| Academic Papers |          | Y         |           |          |                |            | Y          | Y          |
+| QA             | Y        | Y         |           | Y        |                |            | Y          | Y          |
+
+> Note: 'Y' indicates that the data type was used.
+
+The sampling ratios of different data types during the pre-training phase are as follows:
+|                | Web Pages | Code | Encyclopedia | Books | Academic Papers |  QA | Other |
+|:--------------:|:---------:|:----:|:------------:|:-----:|:---------------:|:----:|:-----:|
+| Proportion (%) |   72.91   | 7.09 |     4.81     |  5.62 |       6.55      | 1.15 |  1.87 |
+
+[^1]: GPT3 Paper: [Language Models are Few-Shot Learners](https://arxiv.org/abs/2005.14165)
+[^2]: LLaMA Paper: [Large Language Models Are Multilingual Learners](https://arxiv.org/abs/2207.04672)
+[^3]: BLOOM Paper: [BLOOM: A Large Open-Access Multilingual Language Model](https://arxiv.org/abs/2211.05100)
+[^4]: PaLM Paper: [PaLM: Scaling Language Modeling with Pathways](https://arxiv.org/abs/2204.02311)
+[^5]: Chinchilla Paper: [Chinchilla: A Large Language Model that Outperforms Gopher with 70x Fewer Parameters](https://arxiv.org/abs/2207.14280)
+[^6]: Gopher Paper: [Introducing Gopher: A Giant Language Model from DeepMind](https://arxiv.org/abs/2112.11446)
+[^7]: MT-NLG Paper: [MT-NLG: The Power of Scale for Machine Translation and Natural Language Generation](https://arxiv.org/abs/2202.07536)
 
 ## Model Evaluation
 

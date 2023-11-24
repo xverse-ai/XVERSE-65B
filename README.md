@@ -17,6 +17,10 @@
     <p>
 </h4>
 
+## 更新信息
+**[2023/11/24]** 更新预训练数据的相关信息。  
+**[2023/11/06]** 发布 65B 尺寸的 XVERSE-65B 底座模型。  
+
 ## 模型介绍
 
 **XVERSE-65B** 是由深圳元象科技自主研发的支持多语言的大语言模型（Large Language Model），参数规模为 650 亿，本次开源的模型为底座模型 **XVERSE-65B**，主要特点如下：
@@ -25,6 +29,32 @@
 - **训练数据**：构建了 2.6 万亿 token 的高质量、多样化的数据对模型进行充分训练，包含中、英、俄、西等 40 多种语言，通过精细化设置不同类型数据的采样比例，使得中英两种语言表现优异，也能兼顾其他语言效果。
 - **分词**：基于 BPE（Byte-Pair Encoding）算法，使用上百 GB 语料训练了一个词表大小为 100,534 的分词器，能够同时支持多语言，而无需额外扩展词表。
 - **训练框架**：训练中采用 FlashAttention2 加速计算，3D 并行基础上采用虚拟流水线（virtual pipeline）技术，降低较长流水线和 16k 上下文窗口产生的过高气泡率，在千卡集群的峰值算力利用率达到业界前列。同时通过集群基础设施运营、资源调度、训练框架和调度平台协同等持续优化，打造出高稳定、低中断、强容错的训练系统，将每周有效训练率提升至 98.6%。
+
+在预训练阶段，**XVERSE-65B** 主要使用了 7 类不同的数据类型。以下表格展示了 XVERSE-65B 与其他一些知名模型在预训练数据集方面的比较：
+
+| 数据类别 | GPT3[^1] | Llama[^2] | BLOOM[^3] | PaLM[^4] | Chinchilla[^5] | Gopher[^6] | MT-NLG[^7] | XVERSE-65B |
+|:-------:|:--------:|:---------:|:---------:|:--------:|:--------------:|:----------:|:----------:|:----------:|
+| 网页类   | Y        | Y         | Y         | Y        | Y              | Y          | Y          | Y          |
+| 代码类   |          | Y         | Y         | Y        | Y              | Y          | Y          | Y          |
+| 百科类   | Y        | Y         |           | Y        | Y              | Y          | Y          | Y          |
+| 书籍类   | Y        | Y         |           | Y        | Y              | Y          | Y          | Y          |
+| 论文类   |          | Y         |           |          |                |            | Y          | Y          |
+| 问答类   | Y        | Y         |           | Y        |                |            | Y          | Y          |
+
+> 注：'Y' 表示使用了该类数据。
+
+在预训练阶段，不同类别数据的采样比例如下所示：
+|         | 网页类 | 代码类 | 百科类 | 书籍类 | 论文类 | 问答类 | 其他类 |
+|:-------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|
+| 比例(%) | 72.91  | 7.09   | 4.81   | 5.62   | 6.55   | 1.15   | 1.87   |
+
+[^1]: GPT3 Paper: [Language Models are Few-Shot Learners](https://arxiv.org/abs/2005.14165)
+[^2]: LLaMA Paper: [LLaMA: Open and Efficient Foundation Language Models](https://arxiv.org/abs/2302.13971)
+[^3]: BLOOM Paper: [BLOOM: A 176B-Parameter Open-Access Multilingual Language Model](https://arxiv.org/abs/2211.05100)
+[^4]: PaLM Paper: [PaLM: Scaling Language Modeling with Pathways](https://arxiv.org/abs/2204.02311)
+[^5]: Chinchilla Paper: [Training Compute-Optimal Large Language Models](https://arxiv.org/pdf/2203.15556)
+[^6]: Gopher Paper: [Scaling Language Models: Methods, Analysis & Insights from Training Gopher](https://arxiv.org/abs/2112.11446)
+[^7]: MT-NLG Paper: [Using DeepSpeed and Megatron to Train Megatron-Turing NLG 530B, A Large-Scale Generative Language Model](https://arxiv.org/abs/2201.11990)
 
 ## 评测结果
 
