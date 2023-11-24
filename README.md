@@ -52,7 +52,7 @@
 [^2]: LLaMA Paper: [LLaMA: Open and Efficient Foundation Language Models](https://arxiv.org/abs/2302.13971)
 [^3]: BLOOM Paper: [BLOOM: A 176B-Parameter Open-Access Multilingual Language Model](https://arxiv.org/abs/2211.05100)
 [^4]: PaLM Paper: [PaLM: Scaling Language Modeling with Pathways](https://arxiv.org/abs/2204.02311)
-[^5]: Chinchilla Paper: [Training Compute-Optimal Large Language Models](https://arxiv.org/pdf/2203.15556)
+[^5]: Chinchilla Paper: [Training Compute-Optimal Large Language Models](https://arxiv.org/abs/2203.15556)
 [^6]: Gopher Paper: [Scaling Language Models: Methods, Analysis & Insights from Training Gopher](https://arxiv.org/abs/2112.11446)
 [^7]: MT-NLG Paper: [Using DeepSpeed and Megatron to Train Megatron-Turing NLG 530B, A Large-Scale Generative Language Model](https://arxiv.org/abs/2201.11990)
 

@@ -49,12 +49,12 @@ The sampling ratios of different data types during the pre-training phase are as
 | Proportion (%) |   72.91   | 7.09 |     4.81     |  5.62 |       6.55      | 1.15 |  1.87 |
 
 [^1]: GPT3 Paper: [Language Models are Few-Shot Learners](https://arxiv.org/abs/2005.14165)
-[^2]: LLaMA Paper: [Large Language Models Are Multilingual Learners](https://arxiv.org/abs/2207.04672)
-[^3]: BLOOM Paper: [BLOOM: A Large Open-Access Multilingual Language Model](https://arxiv.org/abs/2211.05100)
+[^2]: LLaMA Paper: [LLaMA: Open and Efficient Foundation Language Models](https://arxiv.org/abs/2302.13971)
+[^3]: BLOOM Paper: [BLOOM: A 176B-Parameter Open-Access Multilingual Language Model](https://arxiv.org/abs/2211.05100)
 [^4]: PaLM Paper: [PaLM: Scaling Language Modeling with Pathways](https://arxiv.org/abs/2204.02311)
-[^5]: Chinchilla Paper: [Chinchilla: A Large Language Model that Outperforms Gopher with 70x Fewer Parameters](https://arxiv.org/abs/2207.14280)
-[^6]: Gopher Paper: [Introducing Gopher: A Giant Language Model from DeepMind](https://arxiv.org/abs/2112.11446)
-[^7]: MT-NLG Paper: [MT-NLG: The Power of Scale for Machine Translation and Natural Language Generation](https://arxiv.org/abs/2202.07536)
+[^5]: Chinchilla Paper: [Training Compute-Optimal Large Language Models](https://arxiv.org/abs/2203.15556)
+[^6]: Gopher Paper: [Scaling Language Models: Methods, Analysis & Insights from Training Gopher](https://arxiv.org/abs/2112.11446)
+[^7]: MT-NLG Paper: [Using DeepSpeed and Megatron to Train Megatron-Turing NLG 530B, A Large-Scale Generative Language Model](https://arxiv.org/abs/2201.11990)
 
 ## Model Evaluation
 
