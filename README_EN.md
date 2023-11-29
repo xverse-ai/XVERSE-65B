@@ -18,6 +18,7 @@
 </h4>
 
 ## Update Information
+**[2023/11/29]** Update model architecture and additional pre-training data information.  
 **[2023/11/24]** Update the related information of the pre-training data.  
 **[2023/11/06]** Released the XVERSE-65B base model.  
 
@@ -29,6 +30,14 @@
 - **Training Data**: The model has been thoroughly trained on a diversified and high-quality dataset consisting of 2.6 trillion of tokens, including more than 40 languages such as Chinese, English, Russian, and Spanish. The sampling ratio of different types of data is finely set, which makes the performance of Chinese and English excellent, and also takes into account the effect of other languages.
 - **Tokenization**: Based on the BPE (Byte-Pair Encoding) algorithm, a tokenizer with a vocabulary size of 100,534 has been trained using hundreds of gigabytes of language data. This tokenizer is capable of supporting multilingual without the need for additional vocabulary expansion.
 - **Training Framework**: The training utilizes FlashAttention2 for accelerated computation, and on top of 3D parallelism, virtual pipeline technology is applied to reduce the excessive bubble rate caused by longer pipelines and 16k context windows. This achieves a peak computational efficiency within the industry-leading range in the petaflop-scale cluster. Concurrently, through continuous optimization of cluster infrastructure operations, resource scheduling, training frameworks, and the scheduling platform, a highly stable, low-interruption, and robust fault-tolerant training system has been developed, enhancing the effective weekly training rate to 98.6%.
+
+The models sizes, architectures and learning rate of **XVERSE-65B** are showed as follows:
+
+| params | d_model | n_heads | n_layers |  d_ff | learning rate |
+|:------:|:-------:|:-------:|:--------:|:-----:|:-------------:|
+|  65B |   8192  |    64   |    80    | 22016 |     1.5e−4    |
+
+## Introduction of Pre-training Data
 
 During the pre-training phase, **XVERSE-65B** primarily utilized 7 different types of data. The following table shows a comparison of the pre-training datasets of XVERSE-65B with some other well-known models:
 
@@ -47,6 +56,34 @@ The sampling ratios of different data types during the pre-training phase are as
 |                | Web Pages | Code | Encyclopedia | Books | Academic Papers |  QA | Other |
 |:--------------:|:---------:|:----:|:------------:|:-----:|:---------------:|:----:|:-----:|
 | Proportion (%) |   72.91   | 7.09 |     4.81     |  5.62 |       6.55      | 1.15 |  1.87 |
+
+During the pre-training phase, **XVERSE-65B** primarily used 41 kinds of natural language, and the following table shows the proportion of different languages in the pre-training data:
+
+| Language | Proportion (%) | Language | Proportion (%) | Language | Proportion (%) | Language | Proportion (%) | Language | Proportion (%) | Language | Proportion (%) |
+|:--------:|:--------------:|:--------:|:--------------:|:--------:|:--------------:|:--------:|:--------------:|:--------:|:--------------:|:--------:|:--------------:|
+|    en    |      54.91     |    pl    |      0.48      |    hu    |      0.19      |    ar    |      0.12      |    fa    |      0.07      |    sl    |      0.05      |
+|    zh    |      31.09     |    it    |      0.36      |    ko    |      0.18      |    ro    |      0.11      |    hi    |      0.07      |    et    |      0.04      |
+|    ja    |      3.22      |    pt    |      0.34      |    sv    |      0.15      |    bg    |      0.10      |    no    |      0.07      |    lv    |      0.03      |
+|    ru    |      3.15      |    cs    |      0.27      |    el    |      0.14      |    th    |      0.10      |    ca    |      0.06      |    sr    |      0.03      |
+|    de    |      1.52      |    uk    |      0.24      |    fi    |      0.14      |    da    |      0.09      |    iw    |      0.06      |    ta    |      0.03      |
+|    es    |      0.91      |    tr    |      0.23      |    id    |      0.13      |    mr    |      0.08      |    lt    |      0.05      |    kk    |      0.02      |
+|    fr    |      0.73      |    nl    |      0.20      |    vi    |      0.13      |    sk    |      0.08      |    ms    |      0.05      |          |                |
+
+> Note: Reference to the abbreviations of different languages: [ISO_639-1](https://zh.wikipedia.org/wiki/ISO_639-1)
+
+For the Code data, the following table shows the proportion of different programming languages:
+
+| Programming Language | Proportion (%) | Programming Language | Proportion (%) | Programming Language | Proportion (%) | Programming Language | Proportion (%) | Programming Language | Proportion (%) | Programming Language | Proportion (%) |
+|:--------------------:|:--------------:|:--------------------:|:--------------:|:--------------------:|:--------------:|:--------------------:|:--------------:|:--------------------:|:--------------:|:--------------------:|:--------------:|
+|          PHP         |      17.06     |          Go          |      3.38      |         Shell        |      0.74      |      PowerShell      |      0.23      |        Arduino       |      0.13      |           R          |      0.04      |
+|      JavaScript      |      15.65     |         Rust         |      2.33      |        Haskell       |      0.46      |        Groovy        |      0.21      |       Assembly       |      0.13      |         ABAP         |      0.01      |
+|         Java         |      15.18     |         Ruby         |      1.61      |      Common Lisp     |      0.43      |        Pascal        |      0.20      |        Clojure       |      0.12      |         COBOL        |     0.0022     |
+|        Python        |      14.64     |         Swift        |      1.40      |         Perl         |      0.34      |        FORTRAN       |      0.19      |         Cuda         |      0.12      |        Verilog       |     0.0001     |
+|      TypeScript      |      6.55      |        Kotlin        |      1.40      |          CSS         |      0.32      |        Elixir        |      0.17      |         VHDL         |      0.09      |                      |                |
+|           C          |      4.84      |         Scala        |      1.08      |         Julia        |      0.32      |       Solidity       |      0.16      |      Emacs Lisp      |      0.08      |                      |                |
+|          C++         |      4.68      |         Dart         |      0.95      |     Visual Basic     |      0.25      |          F#          |      0.14      |     Objective-C++    |      0.08      |                      |                |
+|          C#          |      3.44      |          SQL         |      0.76      |         OCaml        |      0.24      |        Erlang        |      0.14      |        Crystal       |      0.06      |                      |                |
+
 
 [^1]: GPT3 Paper: [Language Models are Few-Shot Learners](https://arxiv.org/abs/2005.14165)
 [^2]: LLaMA Paper: [LLaMA: Open and Efficient Foundation Language Models](https://arxiv.org/abs/2302.13971)
