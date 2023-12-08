@@ -5,8 +5,8 @@
 </div>
 
 <p align="center">
-        <a href="https://huggingface.co/xverse/XVERSE-65B">🤗 XVERSE-65B</a>&nbsp｜
-        <a href="https://modelscope.cn/organization/xverse" rel="nofollow"><img src="resources/modelscope.png" width="20px" style="max-width: 100%;"> ModelScope</a>&nbsp｜&nbsp
+        <a href="https://huggingface.co/xverse">🤗 Hugging Face</a>&nbsp｜
+        <a href="https://modelscope.cn/organization/xverse" rel="nofollow"><img src="resources/modelscope.png" width="20px" style="max-width: 100%;"> ModelScope</a>&nbsp｜
         <a href="resources/wechat.png">💬 WeChat</a>
 </p>
 
@@ -18,9 +18,10 @@
 </h4>
 
 ## Update Information
+**[2023/12/08]** Released the **XVERSE-65B-2** base model. This model builds upon its predecessor through **Continual Pre-Training**, reaching a total training volume of **3.2** trillion tokens. It exhibits enhancements in all capabilities, particularly in mathematics and coding skills, with a **20%** improvement on the GSM8K benchmark and a **41%** increase on HumanEval.   
 **[2023/11/29]** Update model architecture and additional pre-training data information.  
 **[2023/11/24]** Update the related information of the pre-training data.  
-**[2023/11/06]** Released the XVERSE-65B base model.  
+**[2023/11/06]** Released the **XVERSE-65B** base model.  
 
 ## Model Introduction
 
@@ -97,19 +98,19 @@ For the Code data, the following table shows the proportion of different program
 
 To comprehensively assess the performance of the model, we conducted extensive testing across a range of standard datasets, including C-Eval, CMMLU, Gaokao-Bench, MMLU, GAOKAO-English, AGIEval, RACE-M, CommonSenseQA, PIQA, GSM8K and HumanEval. These evaluations spanned multiple capabilities of the model, specifically including Chinese question answering, English question answering, language comprehension, common sense questioning, logical reasoning, mathematical problem-solving, and coding ability. The results of the evaluations are as follows:
 
-|  Capability Dimension  |          Dataset           |        | XVERSE-65B | Llama1-65B | Llama2-70B | Falcon-180B | GPT-3.5 | GPT-4 |
-| :--------------------: | :------------------------: | :----: | :--------: | :--------: | :--------: | :---------: | :-----: | :---: |
-|       Chinese QA       |           C-Eval           | 5-shot |    68.6    |    38.8    |    49.9    |    54.2     |  54.4   | 68.7  |
-|                        |           CMMLU            | 5-shot |    72.6    |    40.6    |    53.6    |    57.2     |  53.9   | 71.0  |
-|                        |  Gaokao-Bench<sup>1</sup>  | 5-shot |    73.9    |    38.9    |    51.4    |    50.5     |    -    |   -   |
-|       English QA       |            MMLU            | 5-shot |    70.8    |    63.4    |    68.9    |    70.5     |  70.0   | 86.4  |
-|                        | GAOKAO-English<sup>1</sup> | 5-shot |    85.3    |    67.0    |    76.6    |    63.3     |    -    |   -   |
-|  Chinese & English QA  |    AGIEval<sup>1</sup>     | 5-shot |    61.8    |    42.4    |    51.4    |    51.3     |    -    |   -   |
-| Language Understanding |           RACE-M           | 0-shot |    90.6    |    67.9    |    81.5    |    87.6     |  85.6   | 93.7  |
-|    Common Sense QA     |       CommonSenseQA        | 7-shot |    79.8    |    74.0    |    78.5    |    82.4     |  80.2   | 88.3  |
-|       Reasoning        |            PIQA            | 0-shot |    80.4    |    82.8    |    82.8    |    85.3     |  81.7   | 89.2  |
-|          Math          |           GSM8K            | 4-shot |    60.3    |    50.9    |    56.8    |    62.6     |  57.1   | 92.0  |
-|         Coding         |         HumanEval          | 0-shot |    26.8    |    23.7    |    29.9    |      -      |  48.1   | 67.0  |
+|  Capability Dimension  |          Dataset           |        | XVERSE-65B-2 | XVERSE-65B | Llama1-65B | Llama2-70B | Falcon-180B | GPT-3.5 | GPT-4 |
+| :--------------------: | :------------------------: | :----: | :----------: | :--------: | :--------: | :--------: | :---------: | :-----: | :---: |
+|       Chinese QA       |           C-Eval           | 5-shot |     72.4     |    68.6    |    38.8    |    49.9    |    54.2     |  54.4   | 68.7  |
+|                        |           CMMLU            | 5-shot |     75.1     |    72.6    |    40.6    |    53.6    |    57.2     |  53.9   | 71.0  |
+|                        |  Gaokao-Bench<sup>1</sup>  | 5-shot |     76.9     |    73.9    |    38.9    |    51.4    |    50.5     |    -    |   -   |
+|       English QA       |            MMLU            | 5-shot |     74.4     |    70.8    |    63.4    |    68.9    |    70.5     |  70.0   | 86.4  |
+|                        | GAOKAO-English<sup>1</sup> | 5-shot |     86.6     |    85.3    |    67.0    |    76.6    |    63.3     |    -    |   -   |
+|  Chinese & English QA  |    AGIEval<sup>1</sup>     | 5-shot |     66.2     |    61.8    |    42.4    |    51.4    |    51.3     |    -    |   -   |
+| Language Understanding |           RACE-M           | 0-shot |     90.7     |    90.6    |    67.9    |    81.5    |    87.6     |  85.6   | 93.7  |
+|    Common Sense QA     |       CommonSenseQA        | 7-shot |     81.1     |    79.8    |    74.0    |    78.5    |    82.4     |  80.2   | 88.3  |
+|       Reasoning        |            PIQA            | 0-shot |     79.4     |    80.4    |    82.8    |    82.8    |    85.3     |  81.7   | 89.2  |
+|          Math          |           GSM8K            | 4-shot |     72.6     |    60.3    |    50.9    |    56.8    |    62.6     |  57.1   | 92.0  |
+|         Coding         |         HumanEval          | 0-shot |     37.8     |    26.8    |    23.7    |    29.9    |      -      |  48.1   | 67.0  |
 
 > <sup>1: Tests are conducted only on single-answer multiple-choice questions, thus excluding fill-in-the-blanks, open-ended questions, and multiple-answer multiple-choice questions.</sup>   
 

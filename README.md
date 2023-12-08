@@ -5,8 +5,8 @@
 </div>
 
 <p align="center">
-        <a href="https://huggingface.co/xverse/XVERSE-65B">🤗 XVERSE-65B</a>&nbsp｜
-        <a href="https://modelscope.cn/organization/xverse" rel="nofollow"><img src="resources/modelscope.png" width="20px" style="max-width: 100%;"> ModelScope</a>&nbsp｜&nbsp
+        <a href="https://huggingface.co/xverse">🤗 Hugging Face</a>&nbsp｜
+        <a href="https://modelscope.cn/organization/xverse" rel="nofollow"><img src="resources/modelscope.png" width="20px" style="max-width: 100%;"> ModelScope</a>&nbsp｜
         <a href="resources/wechat.png">💬 微信社区</a>
 </p>
 
@@ -18,9 +18,10 @@
 </h4>
 
 ## 更新信息
+**[2023/12/08]** 发布 **XVERSE-65B-2** 底座模型，该模型在前一版本的基础上进行了 **Continual Pre-Training**，训练总 token 量达到 **3.2** 万亿；模型各方面的能力均得到提升，尤其是数学和代码能力，在 GSM8K 上提升 **20%**，HumanEval 上提升 **41%**。  
 **[2023/11/29]** 更新模型架构及更多底座数据的相关信息。  
 **[2023/11/24]** 更新底座数据的相关信息。  
-**[2023/11/06]** 发布 65B 尺寸的 XVERSE-65B 底座模型。  
+**[2023/11/06]** 发布 65B 尺寸的 **XVERSE-65B** 底座模型。  
 
 ## 模型介绍
 
@@ -96,19 +97,19 @@
 
 为了综合评估模型的性能，我们在一系列标准数据集上进行了全面测试，包括C-Eval、CMMLU、Gaokao-Bench、MMLU、GAOKAO-English、AGIEval、RACE-M、CommonSenseQA、PIQA、GSM8K和HumanEval。这些评估覆盖了模型在多个领域的能力，具体包括中文问答、英文问答、语言理解、常识问答、逻辑推理、数学问题解答以及编程能力。评估结果如下：
 
-|  能力维度  |           数据集           |        | XVERSE-65B | Llama1-65B | Llama2-70B | Falcon-180B | GPT-3.5 | GPT-4 |
-| :--------: | :------------------------: | :----: | :--------: | :--------: | :--------: | :---------: | :-----: | :---: |
-|  中文问答  |           C-Eval           | 5-shot |    68.6    |    38.8    |    49.9    |    54.2     |  54.4   | 68.7  |
-|            |           CMMLU            | 5-shot |    72.6    |    40.6    |    53.6    |    57.2     |  53.9   | 71.0  |
-|            |  Gaokao-Bench<sup>1</sup>  | 5-shot |    73.9    |    38.9    |    51.4    |    50.5     |    -    |   -   |
-|  英文问答  |            MMLU            | 5-shot |    70.8    |    63.4    |    68.9    |    70.5     |  70.0   | 86.4  |
-|            | GAOKAO-English<sup>1</sup> | 5-shot |    85.3    |    67.0    |    76.6    |    63.3     |    -    |   -   |
-| 中英文问答 |    AGIEval<sup>1</sup>     | 5-shot |    61.8    |    42.4    |    51.4    |    51.3     |    -    |   -   |
-|  语言理解  |           RACE-M           | 0-shot |    90.6    |    67.9    |    81.5    |    87.6     |  85.6   | 93.7  |
-|  常识问答  |       CommonSenseQA        | 7-shot |    79.8    |    74.0    |    78.5    |    82.4     |  80.2   | 88.3  |
-|    推理    |            PIQA            | 0-shot |    80.4    |    82.8    |    82.8    |    85.3     |  81.7   | 89.2  |
-|    数学    |           GSM8K            | 4-shot |    60.3    |    50.9    |    56.8    |    62.6     |  57.1   | 92.0  |
-|    代码    |         HumanEval          | 0-shot |    26.8    |    23.7    |    29.9    |      -      |  48.1   | 67.0  |
+|  能力维度  |           数据集           |        | XVERSE-65B-2 | XVERSE-65B | Llama1-65B | Llama2-70B | Falcon-180B | GPT-3.5 | GPT-4 |
+| :--------: | :------------------------: | :----: | :----------: | :--------: | :--------: | :--------: | :---------: | :-----: | :---: |
+|  中文问答  |           C-Eval           | 5-shot |     72.4     |    68.6    |    38.8    |    49.9    |    54.2     |  54.4   | 68.7  |
+|            |           CMMLU            | 5-shot |     75.1     |    72.6    |    40.6    |    53.6    |    57.2     |  53.9   | 71.0  |
+|            |  Gaokao-Bench<sup>1</sup>  | 5-shot |     76.9     |    73.9    |    38.9    |    51.4    |    50.5     |    -    |   -   |
+|  英文问答  |            MMLU            | 5-shot |     74.4     |    70.8    |    63.4    |    68.9    |    70.5     |  70.0   | 86.4  |
+|            | GAOKAO-English<sup>1</sup> | 5-shot |     86.6     |    85.3    |    67.0    |    76.6    |    63.3     |    -    |   -   |
+| 中英文问答 |    AGIEval<sup>1</sup>     | 5-shot |     66.2     |    61.8    |    42.4    |    51.4    |    51.3     |    -    |   -   |
+|  语言理解  |           RACE-M           | 0-shot |     90.7     |    90.6    |    67.9    |    81.5    |    87.6     |  85.6   | 93.7  |
+|  常识问答  |       CommonSenseQA        | 7-shot |     81.1     |    79.8    |    74.0    |    78.5    |    82.4     |  80.2   | 88.3  |
+|    推理    |            PIQA            | 0-shot |     79.4     |    80.4    |    82.8    |    82.8    |    85.3     |  81.7   | 89.2  |
+|    数学    |           GSM8K            | 4-shot |     72.6     |    60.3    |    50.9    |    56.8    |    62.6     |  57.1   | 92.0  |
+|    代码    |         HumanEval          | 0-shot |     37.8     |    26.8    |    23.7    |    29.9    |      -      |  48.1   | 67.0  |
 
 > <sup>1：只针对其中的单项选择题进行测试，即排除了填空题、开放性问题和多项选择题</sup>   
 
