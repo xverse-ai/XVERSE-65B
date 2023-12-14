@@ -18,6 +18,7 @@
 </h4>
 
 ## Update Information
+**[2023/12/14]** Released the [XVERSE-65B-Chat](https://huggingface.co/xverse/XVERSE-65B-Chat) model, which is an aligned version of the **XVERSE-65B** base model.  
 **[2023/12/08]** Released the **XVERSE-65B-2** base model. This model builds upon its predecessor through **Continual Pre-Training**, reaching a total training volume of **3.2** trillion tokens. It exhibits enhancements in all capabilities, particularly in mathematics and coding skills, with a **20%** improvement on the GSM8K benchmark and a **41%** increase on HumanEval.   
 **[2023/11/29]** Update model architecture and additional pre-training data information.  
 **[2023/11/24]** Update the related information of the pre-training data.  
