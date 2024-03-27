@@ -18,7 +18,7 @@
 </h4>
 
 ## 更新信息
-- **[2024/03/25]** 发布XVERSE-65B-Chat GGUF、GPTQ量化模型，支持llama.cpp、vLLM在MacOS/Linux/Windows系统上推理xverse-65b模型。
+- **[2024/03/25]** 发布XVERSE-65B-Chat GGUF、GPTQ量化模型，支持llama.cpp、vLLM在MacOS/Linux/Windows系统上推理XVERSE-65B-Chat模型。
 - **[2023/12/14]** 发布 [XVERSE-65B-Chat](https://huggingface.co/xverse/XVERSE-65B-Chat) 模型，该模型为基于 **XVERSE-65B** 底座模型的对齐版本。
 - **[2023/12/08]** 发布 **XVERSE-65B-2** 底座模型，该模型在前一版本的基础上进行了 **Continual Pre-Training**，训练总 token 量达到 **3.2** 万亿；模型各方面的能力均得到提升，尤其是数学和代码能力，在 GSM8K 上提升 **20%**，HumanEval 上提升 **41%**。
 - **[2023/11/29]** 更新模型架构及更多底座数据的相关信息。
